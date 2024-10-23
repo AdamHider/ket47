@@ -26,12 +26,12 @@
                                                         </tr>
                                                         <tr style="height: 56px">
                                                             <td style="padding: 32px 30px 0px; font-size: 20px; line-height: 28px; height: 56px" align="center">
-                                                                <strong>Для Вас открылся новый ресторан!</strong>
+                                                                <strong><?= $message_subject ?></strong>
                                                             </td>
                                                         </tr>
                                                         <?php if(!empty($images->content)){ ?>
                                                         <tr style="height: 96px" >
-                                                            <td style="padding: 32px 30px 0px; height: 96px" align="center">
+                                                            <td style="padding: 0px 30px 0px; height: 96px" align="center">
                                                                 <p>
                                                                     <img style="border-radius: 10px"  src="cid:<?= $images->content ?>"  width="450">
                                                                 </p>
@@ -48,11 +48,11 @@
                                                                 align="center">С заботой о Вас, команда Tezkel.</td>
                                                         </tr>
                                                         
-                                                        <?php if(!empty($message_data->link)){ ?>
+                                                        <?php if(!empty($message_data['link'])){ ?>
                                                         <tr style="height: 24px">
                                                             <td style="padding: 32px 30px; height: 24px" align="center">
                                                                 <a style="text-decoration: none; background-color: #009dcd; padding: 10px 15px; border-radius: 10px; color: white; font-weight: bold"
-                                                                    href="<?= $message_data->link ?>"
+                                                                    href="<?= $message_data['link'] ?>"
                                                                     target="_blank" rel="noreferrer">ПОДРОБНЕЕ</a></td>
                                                         </tr>
                                                         <?php } ?>

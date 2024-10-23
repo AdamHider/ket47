@@ -147,8 +147,8 @@ class Messenger{
             'buttonPM' => $email->setAttachmentCID($images->buttonPM),
             'header' =>  $email->setAttachmentCID($images->header)
         ];
-        if(!empty($message->message_data->image)){
-            $image_hash = basename($message->message_data->image, '.1000.1000.webp');
+        if(!empty($message->message_data['image'])){
+            $image_hash = basename($message->message_data['image'], '.1000.1000.webp');
             file_get_contents(base_url('/image/get.php/').'/'.$image_hash.'.450.450.jpg', false, stream_context_create(["ssl"=>["verify_peer"=>false,"verify_peer_name"=>false]]));
             $images->content = WRITEPATH.'images/optimised/'.$image_hash.'.450.450.jpg';
             $email->attach($images->content);
